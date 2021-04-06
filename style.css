@@ -1,0 +1,52 @@
+#calcolatrice {
+  background-color: blue;
+  display: flex;
+  flex-flow: row wrap;
+  width: 56vw;
+  height: 90vh;
+  border-radius: 10%;
+}
+#display {
+  width: 51.5vw;
+  height: auto;
+  text-align: end;
+  font-weight: bold;
+  font-size: 3em;
+  border-radius: 8%;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  margin: 10px;
+  background-color: rgb(210, 210, 243);
+}
+.tastiera {
+  display: flex;
+  flex-flow: row wrap;
+  width: 60vw;
+  height: 60vh;
+}
+.tasto {
+  background: tomato;
+  padding: 10px;
+  width: 10vw;
+  height: auto;
+  margin: 10px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  border-radius: 20%;
+  border-style: solid;
+  border-color: black;
+}
+.clear {
+  width: 23.5vw;
+  height: auto;
+}
+
+.tasto:active {
+  background: rgb(6, 130, 187);
+  color: rgb(242, 245, 81);
+  border-style: solid;
+  border-color: rgb(242, 245, 81);
+}
