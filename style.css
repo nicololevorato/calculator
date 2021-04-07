@@ -3,12 +3,13 @@
   display: flex;
   flex-flow: row wrap;
   width: 56vw;
-  height: 90vh;
+  height: 100vh;
   border-radius: 10%;
 }
 #display {
+  position: relative;
   width: 51.5vw;
-  height: auto;
+  height: 15%;
   text-align: end;
   font-weight: bold;
   font-size: 3em;
@@ -18,12 +19,22 @@
   border-width: 5px;
   margin: 10px;
   background-color: rgb(210, 210, 243);
+  left: 1.2vw;
+  top: 3vh;
+}
+#numeri {
+  position: relative;
+  right: 1vw;
+  top: 2vh;
 }
 .tastiera {
+  position: relative;
   display: flex;
   flex-flow: row wrap;
   width: 60vw;
   height: 60vh;
+  left: 1.2vw;
+  bottom: 3vh;
 }
 .tasto {
   background: tomato;

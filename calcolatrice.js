@@ -26,3 +26,19 @@ function operate(a, b, sign) {
       break;
   }
 }
+var numeri = document.getElementById("numeri");
+let numero = "";
+var tasti = document.querySelectorAll(".numero");
+for (var i = 0; i < tasti.length; i++) {
+  const valoreTasto = tasti[i].textContent;
+  tasti[i].addEventListener("click", () => {
+    numero += valoreTasto;
+    numeri.textContent = numero;
+  });
+}
+var clear = document.querySelector(".clear");
+clear.addEventListener("click", () => {
+  numero = "";
+  numeri.textContent = 0;
+});
+var tasti = document.querySelectorAll(".operazione");
