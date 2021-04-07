@@ -13,25 +13,23 @@ function divide(a, b) {
 function operate(a, b, sign) {
   switch (sign) {
     case "+":
-      sum(a, b);
-      break;
+      return sum(a, b);
     case "-":
-      sub(a, b);
-      break;
+      return sub(a, b);
     case "*":
-      multiply(a, b);
-      break;
+      return multiply(a, b);
     case "/":
-      divide(a, b);
-      break;
+      return divide(a, b);
   }
 }
 var numeri = document.getElementById("numeri");
-let numero = "";
-var tasti = document.querySelectorAll(".numero");
-for (var i = 0; i < tasti.length; i++) {
-  const valoreTasto = tasti[i].textContent;
-  tasti[i].addEventListener("click", () => {
+var numeroPre = null;
+var numero = "";
+var operazione = null;
+var tastiNumeri = document.querySelectorAll(".numero");
+for (var i = 0; i < tastiNumeri.length; i++) {
+  const valoreTasto = tastiNumeri[i].textContent;
+  tastiNumeri[i].addEventListener("click", () => {
     numero += valoreTasto;
     numeri.textContent = numero;
   });
@@ -39,6 +37,24 @@ for (var i = 0; i < tasti.length; i++) {
 var clear = document.querySelector(".clear");
 clear.addEventListener("click", () => {
   numero = "";
+  operazione = null;
+  numeroPre = null;
   numeri.textContent = 0;
 });
-var tasti = document.querySelectorAll(".operazione");
+
+var tastiOperazioni = document.querySelectorAll(".operazione");
+for (var i = 0; i < tastiOperazioni.length; i++) {
+  const valoreTasto = tastiOperazioni[i].textContent;
+  tastiOperazioni[i].addEventListener("click", () => {
+    if (operazione != null && numeroPre != null) {
+      numeroPre = operate(parseInt(numero), parseInt(numeroPre), operazione);
+      numeri.textContent = numeroPre;
+      operazione = valoreTasto;
+      numero = "";
+    } else {
+      numeroPre = numero;
+      numero = "";
+      operazione = valoreTasto;
+    }
+  });
+}
